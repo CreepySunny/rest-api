@@ -2,10 +2,9 @@ package routes
 
 import (
 	"net/http"
+	CalcAddHandler "github.com/CreepySunny/rest-api/internal/handlers"
 )
 
 func RegisterRoutes(router *http.ServeMux) {
-	router.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Welcome to the home page!"))
-	})
+		router.HandleFunc("POST /add", CalcAddHandler.CalcAddHandler)
 }
